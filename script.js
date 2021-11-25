@@ -5,6 +5,12 @@ btn.addEventListener("click", function() {
     let calc = document.getElementById("calc").value;
     let sum;
 
+    let ul = document.createElement("ul");
+    document.body.append(ul);
+    
+    var li = document.createElement("li");
+    ul.append(li);
+
     switch(calc) {
         case "+":
             sum = +input1 + +input2;
@@ -19,6 +25,5 @@ btn.addEventListener("click", function() {
             sum = input1 * input2;
             break;
     }
-    console.log(sum);
-    document.body.append(" " + sum)
+    li.appendChild(document.createTextNode(input1 + " " + calc + " " + input2 + " " + "=" + " " + sum + " "));
 })
